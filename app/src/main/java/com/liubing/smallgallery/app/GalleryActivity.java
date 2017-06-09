@@ -1,7 +1,9 @@
-package com.liubing.smallgallery;
+package com.liubing.smallgallery.app;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.liubing.smallgallery.R;
 
 public class GalleryActivity extends AppCompatActivity {
 
