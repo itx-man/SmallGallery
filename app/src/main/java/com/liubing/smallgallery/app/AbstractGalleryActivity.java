@@ -10,6 +10,8 @@ import android.os.Bundle;
 public class AbstractGalleryActivity extends Activity implements GalleryContext{
     public static final String TAG = "AbstractGalleryActivity";
 
+    private StateManager mStateManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,5 +21,11 @@ public class AbstractGalleryActivity extends Activity implements GalleryContext{
     @Override
     public Context getAndroidContext() {
         return this;
+    }
+
+    public synchronized StateManager getStateManager() {
+        if (mStateManager == null)
+            mStateManager = new StateManager(this);
+        return mStateManager;
     }
 }
